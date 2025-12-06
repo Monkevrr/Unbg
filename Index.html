@@ -4454,7 +4454,7 @@
     "name": "Five Nights at Candy's",
     "cover": `${COVER_URL}/five-nights-at-candys.png`,
     "url": "five-nights-at-candys.html",
-    "author": "Emil "Ace" Macko",
+    "author": "Emil \"Ace\" Macko",
     "special": ["port"]
   },
   {
@@ -4462,7 +4462,7 @@
     "name": "Five Nights at Candy's 2",
     "cover": `${COVER_URL}/five-nights-at-candys-2.png`,
     "url": "five-nights-at-candys-2.html",
-    "author": "Emil "Ace" Macko",
+    "author": "Emil \"Ace\" Macko",
     "special": ["port"]
   },
   {
@@ -5993,8 +5993,8 @@
         // Load games from JSON array
         games = GAMES_JSON.map(game => ({
             ...game,
-            cover: game.cover.replace('{COVER_URL}', COVER_URL),
-            isExternal: game.url.startsWith('http://') || game.url.startsWith('https://')
+            // cover is already correct from template literal
+            isExternal: game.url && (game.url.startsWith('http://') || game.url.startsWith('https://'))
         }));
 
         console.log(`✓ Loaded ${games.length} games`);
